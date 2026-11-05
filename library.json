@@ -1,0 +1,82 @@
+{
+  "PMMA_950_A2": {
+    "name": "PMMA 950 A2",
+    "coeffs": [1.21212e-12, -1.65657e-8, 0.0000900303, -0.235597, 300.85714],
+    "min_rpm": 1000,
+    "max_rpm": 4500,
+    "bake_temp": 180,
+    "bake_time": 90,
+    "developer": "MIBK:IPA 1:3",
+    "develop_time": "60 с (для 100 нм) / 140 с (для 300 нм)"
+  },
+  "PMMA_950_A4": {
+    "name": "PMMA 950 A4",
+    "coeffs": [5.75758e-12, -7.11313e-8, 0.000331561, -0.728574, 894.07143],
+    "min_rpm": 1000,
+    "max_rpm": 4500,
+    "bake_temp": 180,
+    "bake_time": 90,
+    "developer": "MIBK:IPA 1:3",
+    "develop_time": "60 с (для 100 нм) / 140 с (для 300 нм)"
+  },
+  "PMMA_950_A7": {
+    "name": "PMMA 950 A7",
+    "coeffs": [2.9697e-12, -5.21414e-8, 0.000344591, -1.06877, 1718.57143],
+    "min_rpm": 1000,
+    "max_rpm": 4500,
+    "bake_temp": 180,
+    "bake_time": 90,
+    "developer": "MIBK:IPA 1:3",
+    "develop_time": "60 с (для 100 нм) / 140 с (для 300 нм)"
+  },
+  "PMMA_950_A9": {
+    "name": "PMMA 950 A9",
+    "coeffs": [2.29091e-11, -3.32202e-7, 0.00183861, -4.62383, 5981.78571],
+    "min_rpm": 1000,
+    "max_rpm": 4500,
+    "bake_temp": 180,
+    "bake_time": 90,
+    "developer": "MIBK:IPA 1:3",
+    "develop_time": "60 с (для 100 нм) / 140 с (для 300 нм)"
+  },
+  "PMMA_950_A11": {
+    "name": "PMMA 950 A11",
+    "coeffs": [6.66667e-11, -8.30667e-7, 0.00403433, -9.39469, 11223.5714],
+    "min_rpm": 1000,
+    "max_rpm": 4500,
+    "bake_temp": 180,
+    "bake_time": 90,
+    "developer": "MIBK:IPA 1:3",
+    "develop_time": "60 с (для 100 нм) / 140 с (для 300 нм)"
+  },
+  "PMMA_495_C2": {
+    "name": "PMMA 495 C2",
+    "coeffs": [2.60606e-12, -2.89495e-8, 0.000121015, -0.231025, 306.42857],
+    "min_rpm": 1000,
+    "max_rpm": 4500,
+    "bake_temp": 180,
+    "bake_time": 90,
+    "developer": "MIBK:IPA 1:3",
+    "develop_time": "60 с (для 100 нм) / 140 с (для 300 нм)"
+  },
+  "PMMA_495_C4": {
+    "name": "PMMA 495 C4",
+    "coeffs": [5.4066e-12, -6.97379e-8, 0.000338575, -0.74452, 963.68437],
+    "min_rpm": 1000,
+    "max_rpm": 4500,
+    "bake_temp": 180,
+    "bake_time": 90,
+    "developer": "MIBK:IPA 1:3",
+    "develop_time": "60 с (для 100 нм) / 140 с (для 300 нм)"
+  },
+  "PMMA_495_C6": {
+    "name": "PMMA 495 C6",
+    "coeffs": [1.03705e-11, -1.34567e-7, 0.000649983, -1.41858, 1831.7018],
+    "min_rpm": 1000,
+    "max_rpm": 4500,
+    "bake_temp": 180,
+    "bake_time": 90,
+    "developer": "MIBK:IPA 1:3",
+    "develop_time": "60 с (для 100 нм) / 140 с (для 300 нм)"
+  }
+}
