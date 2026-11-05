@@ -85,9 +85,9 @@
     "min_rpm": 1000,
     "max_rpm": 6000,
     "bake_temp": 90,
-    "bake_time": "NaN",
+    "bake_time": 60,
     "developer": "ma-D 532",
-    "develop_time": "NaN"
+    "develop_time": "60 с"
   },
   "maN_2403": {
     "name": "ma-N 2403",
@@ -95,9 +95,9 @@
     "min_rpm": 1000,
     "max_rpm": 6000,
     "bake_temp": 90,
-    "bake_time": "NaN",
+    "bake_time": 60,
     "developer": "ma-D 532",
-    "develop_time": "NaN"
+    "develop_time": "60 с"
   },
   "maN_2405": {
     "name": "ma-N 2405",
@@ -105,9 +105,9 @@
     "min_rpm": 1000,
     "max_rpm": 6000,
     "bake_temp": 90,
-    "bake_time": "NaN",
+    "bake_time": 90,
     "developer": "ma-D 532",
-    "develop_time": "NaN"
+    "develop_time": "90 с"
   },
   "maN_2410": {
     "name": "ma-N 2410",
@@ -115,8 +115,8 @@
     "min_rpm": 1000,
     "max_rpm": 6000,
     "bake_temp": 90,
-    "bake_time": "NaN",
+    "bake_time": 150,
     "developer": "ma-D 532",
-    "develop_time": "NaN"
+    "develop_time": "150 с"
   }
 }
