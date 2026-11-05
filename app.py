@@ -35,7 +35,7 @@ with col2:
         step=100
     )
 
-if st.button("Рассчитать рецепт", type="primary", use_container_width=True):
+if st.button("Рассчитать", type="primary", use_container_width=True):
     thickness, msg = core.calculate_thickness(resist, rpm)
     
     if thickness:
