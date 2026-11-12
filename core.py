@@ -1,13 +1,13 @@
 import json
 import os
 import sys
+from scipy.optimize import brentq  # <--- ДОБАВИТЬ ЭТУ СТРОКУ
 
 def load_library():
+    # ... (твой старый код load_library остается без изменений) ...
     if getattr(sys, 'frozen', False):
-        # Если это собранный .exe:
         base_path = getattr(sys, '_MEIPASS', os.path.dirname(sys.executable))
     else:
-        # Если запуск из исходников в VS Code:
         base_path = os.path.dirname(os.path.abspath(__file__))
     
     filepath = os.path.join(base_path, "library.json")
@@ -16,7 +16,7 @@ def load_library():
         return json.load(f)
 
 def calculate_thickness(resist_data, rpm):
-    # 1. Проверка диапазона скоростей
+    # ... (твой старый код calculate_thickness остается без изменений) ...
     if rpm < resist_data["min_rpm"] or rpm > resist_data["max_rpm"]:
         return None, f"Ошибка: скорость вне рабочего диапазона ({resist_data['min_rpm']} - {resist_data['max_rpm']} об/мин)."
     
@@ -29,13 +29,23 @@ def calculate_thickness(resist_data, rpm):
 
     return round(thickness, 1), "Успешно"
 
-#def calculate_develop_time(resist_data, thickness):
-    # t = k*d + b (линейная интерполяция)
-    # Если коэффициентов нет, возвращаем заглушку
-#    k = resist_data.get("dev_k")
-#    b = resist_data.get("dev_b")
+# --- НОВАЯ ФУНКЦИЯ (ДОБАВИТЬ В КОНЕЦ ФАЙЛА) ---
+def calculate_rpm_for_thickness(resist_data, target_thickness):
+    # Проверяем, влезает ли желаемая толщина в диапазон этого резиста
+    min_thickness, _ = calculate_thickness(resist_data, resist_data["max_rpm"])
+    max_thickness, _ = calculate_thickness(resist_data, resist_data["min_rpm"])
     
-#    if k is not None and b is not None:
-#        time = k * thickness + b
-#        return round(time, 0)
-#    return None
+    if target_thickness < min_thickness or target_thickness > max_thickness:
+        return None, f"Ошибка: желаемая толщина ({target_thickness} нм) вне возможностей этого резиста. Диапазон: от {min_thickness} до {max_thickness} нм."
+
+    # Создаем функцию, которая равна нулю, когда мы нашли нужную скорость
+    def equation(rpm):
+        thickness, _ = calculate_thickness(resist_data, rpm)
+        return thickness - target_thickness
+
+    try:
+        # xtol=0.1 означает точность поиска по скорости 0.1 об/мин
+        optimal_rpm = brentq(equation, resist_data["min_rpm"], resist_data["max_rpm"], xtol=0.1)
+        return round(optimal_rpm), "Успешно"
+    except Exception as e:
+        return None, "Ошибка: не удалось подобрать скорость."
