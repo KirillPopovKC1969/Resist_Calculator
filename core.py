@@ -1,10 +1,9 @@
 import json
 import os
 import sys
-from scipy.optimize import brentq  # <--- ДОБАВИТЬ ЭТУ СТРОКУ
+from scipy.optimize import brentq
 
 def load_library():
-    # ... (твой старый код load_library остается без изменений) ...
     if getattr(sys, 'frozen', False):
         base_path = getattr(sys, '_MEIPASS', os.path.dirname(sys.executable))
     else:
@@ -16,7 +15,6 @@ def load_library():
         return json.load(f)
 
 def calculate_thickness(resist_data, rpm):
-    # ... (твой старый код calculate_thickness остается без изменений) ...
     if rpm < resist_data["min_rpm"] or rpm > resist_data["max_rpm"]:
         return None, f"Ошибка: скорость вне рабочего диапазона ({resist_data['min_rpm']} - {resist_data['max_rpm']} об/мин)."
     
@@ -29,7 +27,6 @@ def calculate_thickness(resist_data, rpm):
 
     return round(thickness, 1), "Успешно"
 
-# --- НОВАЯ ФУНКЦИЯ (ДОБАВИТЬ В КОНЕЦ ФАЙЛА) ---
 def calculate_rpm_for_thickness(resist_data, target_thickness):
     # Проверяем, влезает ли желаемая толщина в диапазон этого резиста
     min_thickness, _ = calculate_thickness(resist_data, resist_data["max_rpm"])
