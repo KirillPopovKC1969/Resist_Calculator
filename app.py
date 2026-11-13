@@ -46,10 +46,19 @@ if mode == "Толщину через скорость":
 
 else: # Режим "Скорость через толщину"
     with col2:
-        # Ставим значение по умолчанию 200 нм, можно менять
+        # Вычисляем границы толщин для этого резиста
+        thickness_at_min_rpm, _ = core.calculate_thickness(resist, min_rpm)
+        thickness_at_max_rpm, _ = core.calculate_thickness(resist, max_rpm)
+        
+        # Выводим подсказку для пользователя
+        st.info(f"Для этого резиста доступна толщина от **{thickness_at_max_rpm}** до **{thickness_at_min_rpm}** нм.")
+        
+        # Ставим значение по умолчанию (середину диапазона), чтобы было удобнее
+        default_thickness = int((thickness_at_min_rpm + thickness_at_max_rpm) / 2)
+        
         target_thickness = st.number_input(
             "Желаемая толщина (нм):", 
-            min_value=10, max_value=20000, value=200, step=10
+            min_value=1, max_value=20000, value=default_thickness, step=10
         )
     
     if st.button("Подобрать скорость", type="primary", use_container_width=True):
