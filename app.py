@@ -53,7 +53,7 @@ else: # Режим "Скорость через толщину"
         # Выводим подсказку для пользователя
         st.info(f"Для этого резиста доступна толщина от **{thickness_at_max_rpm}** до **{thickness_at_min_rpm}** нм.")
         
-        # Ставим значение по умолчанию (середину диапазона), чтобы было удобнее
+        # Ставим значение по умолчанию (середину диапазона)
         default_thickness = int((thickness_at_min_rpm + thickness_at_max_rpm) / 2)
         
         target_thickness = st.number_input(
@@ -93,3 +93,15 @@ if 'final_rpm' in st.session_state:
     * **Время:** {resist['develop_time']}
     * *Рекомендуется после проявителя промыть образец в чистом IPA в течение 30 секунд для остановки реакции.*
     """)
+
+# --- БЛОК ССЫЛОК НА ТЕХ. ПАСПОРТА ---
+st.markdown("---")
+st.markdown("#### Источники данных")
+st.markdown("Ознакомиться с оригинальными графиками и техническими характеристиками можно по ссылкам:")
+
+if resist_key.startswith("PMMA"):
+    st.markdown("* [Технический паспорт PMMA (ООО «ЭлекТрейд-М»)](https://ostec-materials.ru/upload/iblock/PMMA.pdf)")
+elif resist_key.startswith("maN"):
+    st.markdown("* [Технический паспорт ma-N 2400 (Micro Resist Technology)](https://ostec-materials.ru/upload/iblock/Microresist%20Technology%20ma-N%202400_TDS_Eng.pdf)")
+    st.markdown("* [Технический паспорт ma-N 2403 (UCSB NanoFab)](https://wiki.nanofab.ucsb.edu/w/images/5/59/MaN2403-E-Beam-Resist-Datasheet.pdf)")
+    st.markdown("* [Страница продукта ma-N 2400 на сайте производителя](https://microresist.de/en/produkt/ma-n-2400-series/)")
