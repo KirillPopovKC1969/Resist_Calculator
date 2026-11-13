@@ -100,7 +100,7 @@ st.markdown("#### Источники данных")
 st.markdown("Ознакомиться с оригинальными графиками и техническими характеристиками можно по ссылкам:")
 
 if resist_key.startswith("PMMA"):
-    st.markdown("* [Технический паспорт PMMA (ООО «ЭлекТрейд-М»)](https://ostec-materials.ru/upload/iblock/PMMA.pdf)")
+    st.markdown("* [Технический паспорт PMMA (MicroChem)](https://ostec-materials.ru/upload/iblock/PMMA.pdf)")
 elif resist_key.startswith("maN"):
     st.markdown("* [Технический паспорт ma-N 2400 (Micro Resist Technology)](https://ostec-materials.ru/upload/iblock/Microresist%20Technology%20ma-N%202400_TDS_Eng.pdf)")
     st.markdown("* [Технический паспорт ma-N 2403 (UCSB NanoFab)](https://wiki.nanofab.ucsb.edu/w/images/5/59/MaN2403-E-Beam-Resist-Datasheet.pdf)")
